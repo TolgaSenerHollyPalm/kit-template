@@ -82,7 +82,7 @@ describe('kit colour in src/kit.css', () => {
     for (const selector of [':root', DARK]) {
       const own = tokens(kitCss, selector)
       for (const name of ['--color-primary', '--color-primary-dark', '--color-primary-soft', '--color-on-primary']) {
-        expect(own[name], `${name} in ${selector}`).toMatch(/^#[0-9a-f]{6}$/i)
+        expect(own[name] ?? 'missing', `${name} in ${selector}`).toMatch(/^#[0-9a-f]{6}$/i)
       }
     }
   })

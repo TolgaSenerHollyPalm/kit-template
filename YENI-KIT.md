@@ -12,7 +12,7 @@ Yeni kit aşağıdaki sırayla açılır. Örnekler BookKit için yazıldı.
    planda GitHub Pages yalnızca herkese açık depolarda çalışır.
 2. Depoyu `~/MyProjects` altına klonla ve ilk commit'ten önce depoya commit kimliğini ayarla (`git config user.name`,
    `git config user.email`).
-3. `npm install`
+3. `package.json`'daki `name` alanına deponun adını yaz, sonra `npm install` (kilit dosyasındaki ad da güncellenir).
 
 İlk push'ta `deploy.yml` kendiliğinden çalışır ve Pages henüz açık olmadığı için **hata verir**. Beklenen bir durum;
 7. adımda düzelir. Yayına kadar hiç çalışmasın istersen `deploy.yml`'deki `push:` tetikleyicisini sil,
