@@ -40,7 +40,7 @@ PREVIEW_PORT=4175
 - **Kimliği yayından sonra değiştirme.** Kullanıcıların verisi ve ayarları eski adın altında kalır, eski yedekler
   "başka bir kitin yedeği" sayılır.
 - Portlar: aynı portta daha önce başka bir kit çalıştıysa tarayıcıda onun service worker'ı kalır ve yeni kitin yerine o
-  açılır. Kullanılanlar: TripKit 5173 / 4173, kit-template 5174 / 4174, BookKit 5175 / 4175. Yeni kit sıradaki çifti
+  açılır. Ayrılanlar: TripKit 5173 / 4173, kit-template 5174 / 4174, BookKit 5175 / 4175. Yeni kit sıradaki çifti
   alır.
 
 ## 3. Renk: `src/kit.css`
@@ -92,8 +92,8 @@ Amber gibi açık bir renkte `--color-on-primary` koyu olmalı. Renkler altı ha
 
 Kurallar:
 
-- Her kayıtta `id` ve `updatedAt` bulunur. `updatedAt` her kayıtta `AppDataProvider` içinde damgalanır; yedekten geri
-  yüklerken damgalanmaz. Birleştirme iki kopyadan yenisini buna göre tutar.
+- Her kayıtta `id` ve `updatedAt` bulunur. `updatedAt`, kayıt her kaydedildiğinde `AppDataProvider` içinde damgalanır;
+  yedekten geri yüklerken damgalanmaz. Birleştirme iki kopyadan yenisini buna göre tutar.
 - Yeni bir localStorage anahtarı gerekirse `src/kit.ts`'teki `KEYS`'e ekle. Ön eki oradan gelir ve "Tüm verileri sil"
   onu da siler.
 - Veri biçimi değişince `DATABASE_VERSION` artar. Aynı adım hem `db.ts`'teki `upgrade()`'e hem `migrateKit`'e yazılır;
