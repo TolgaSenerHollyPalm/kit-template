@@ -10,12 +10,14 @@ Yeni kit aşağıdaki sırayla açılır. Örnekler BookKit için yazıldı.
 
 1. GitHub'da bu deponun sayfasında **Use this template › Create a new repository**. Depo herkese açık olmalı: ücretsiz
    planda GitHub Pages yalnızca herkese açık depolarda çalışır.
+   - Önce **GitHub › Settings › Emails › Keep my email addresses private** açık olsun. GitHub yeni deponun ilk
+     commit'ini ("Initial commit") hesabın birincil e-postasıyla atar; kutu kapalıysa o adres herkese açık geçmişe girer.
 2. Depoyu `~/MyProjects` altına klonla ve ilk commit'ten önce depoya commit kimliğini ayarla (`git config user.name`,
    `git config user.email`).
 3. `package.json`'daki `name` alanına deponun adını yaz, sonra `npm install` (kilit dosyasındaki ad da güncellenir).
 
-İlk push'ta `deploy.yml` kendiliğinden çalışır ve Pages henüz açık olmadığı için **hata verir**. Beklenen bir durum;
-7. adımda düzelir. Yayına kadar hiç çalışmasın istersen `deploy.yml`'deki `push:` tetikleyicisini sil,
+Depo açılır açılmaz `deploy.yml` kendiliğinden çalışır; kurulum, test ve derleme geçer, Pages henüz açık olmadığı
+için "Setup Pages" adımında **hata verir**. Beklenen bir durum; 7. adımda düzelir. Yayına kadar hiç çalışmasın istersen `deploy.yml`'deki `push:` tetikleyicisini sil,
 `workflow_dispatch` kalsın; yayın günü geri eklersin.
 
 ## 2. Kimlik: `.env`
