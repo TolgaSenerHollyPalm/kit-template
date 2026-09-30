@@ -8,16 +8,26 @@ Yeni kit aşağıdaki sırayla açılır. Örnekler BookKit için yazıldı.
 
 ## 1. Depoyu aç
 
-1. GitHub'da bu deponun sayfasında **Use this template › Create a new repository**. Depo herkese açık olmalı: ücretsiz
-   planda GitHub Pages yalnızca herkese açık depolarda çalışır.
-   - Önce **GitHub › Settings › Emails › Keep my email addresses private** açık olsun. GitHub yeni deponun ilk
-     commit'ini ("Initial commit") hesabın birincil e-postasıyla atar; kutu kapalıysa o adres herkese açık geçmişe girer.
-2. Depoyu `~/MyProjects` altına klonla ve ilk commit'ten önce depoya commit kimliğini ayarla (`git config user.name`,
-   `git config user.email`).
+1. GitHub'da **boş** bir depo aç: ad kitin adı, herkese açık, README / .gitignore / lisans eklemeden. Ücretsiz planda
+   GitHub Pages yalnızca herkese açık depolarda çalışır.
+2. Şablonu yerelde kopyala, commit kimliğini ayarla ve ilk commit'i kendin at:
+
+   ```bash
+   git clone https://github.com/TolgaSenerHollyPalm/kit-template.git bookkit
+   cd bookkit && rm -rf .git && git init -b main
+   git config user.name "Ad Soyad" && git config user.email "<id>+<kullanıcı>@users.noreply.github.com"
+   git add . && git commit -m "Start from kit-template"
+   git remote add origin https://github.com/TolgaSenerHollyPalm/bookkit.git && git push -u origin main
+   ```
+
 3. `package.json`'daki `name` alanına deponun adını yaz, sonra `npm install` (kilit dosyasındaki ad da güncellenir).
 
-Depo açılır açılmaz `deploy.yml` kendiliğinden çalışır; kurulum, test ve derleme geçer, Pages henüz açık olmadığı
-için "Setup Pages" adımında **hata verir**. Beklenen bir durum; 7. adımda düzelir. Yayına kadar hiç çalışmasın istersen `deploy.yml`'deki `push:` tetikleyicisini sil,
+**Use this template** düğmesi aynı dosyaları verir ama ilk commit'i GitHub atar: yazar, hesabın birincil e-postası
+olur ve herkese açık geçmişe girer. Hesapta "Keep my email addresses private" açık değilse bu yolu kullanma. O ayar
+depoya göre değil hesaba göredir: açılınca hesabın bütün depolarında, sitede yapılan commit'ler noreply adresiyle atılır.
+
+İlk push'ta `deploy.yml` kendiliğinden çalışır; kurulum, test ve derleme geçer, Pages henüz açık olmadığı için
+"Setup Pages" adımında **hata verir**. Beklenen bir durum; 7. adımda düzelir. Yayına kadar hiç çalışmasın istersen `deploy.yml`'deki `push:` tetikleyicisini sil,
 `workflow_dispatch` kalsın; yayın günü geri eklersin.
 
 ## 2. Kimlik: `.env`
